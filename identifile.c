@@ -101,7 +101,7 @@ int main(int argc, char **argv) {
 
 	flen = st.st_size;
 
-	p = mmap(NULL, (unsigned)flen, PROT_READ, MAP_PRIVATE, fd, 0);
+	p = (char *)mmap(NULL, (unsigned)flen, PROT_READ, MAP_PRIVATE, fd, 0);
 	if (p == MAP_FAILED) {
 		warn("mmap");
 		goto out;
