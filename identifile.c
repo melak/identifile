@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2012 Tamas Tevesz <ice@extreme.hu>
+ * Copyright (c) 2009-2017 Tamas Tevesz <ice@extreme.hu>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
