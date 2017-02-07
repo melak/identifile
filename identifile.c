@@ -106,6 +106,14 @@ int main(int argc, char **argv) {
 		warn("mmap");
 		goto out;
 	}
+#if !defined( MADV_NOCORE )
+#	if defined( MADV_DONTDUMP )
+#		define MADV_NOCORE MADV_DONTDUMP
+#	else
+#		define MADV_NOCORE 0
+#	endif
+#endif
+	madvise(p, flen, MADV_WILLNEED | MADV_NOCORE);
 
 	ret = 0;
 	offset = -1;
