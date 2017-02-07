@@ -1,10 +1,4 @@
 
-CC		 = gcc
-LD		 = $(CC)
-LDD		 = ldd
-SIZE		 = size
-STRIP		 = strip
-
 CFLAGS		+= -g3 -ggdb3 -fPIC
 CFLAGS		+= -Wall -Wextra -Wstrict-prototypes -Wmissing-prototypes
 CFLAGS		+= -Wmissing-declarations -Wshadow -Wpointer-arith
@@ -21,7 +15,7 @@ strip:		$(PROG)
 		$(STRIP) $(PROG)
 
 $(PROG):	$(SRC)
-		$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $<
+		$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 
 clean:
 		-rm -f *.o core core.* $(PROG)
